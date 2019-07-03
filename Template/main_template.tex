@@ -10,6 +10,8 @@
 \usepackage{color}
 \usepackage{url}
 \usepackage{listings}
+\usepackage{ifthen}
+
 
 \usepackage[TABBOTCAP, tight]{}
 
@@ -35,7 +37,7 @@
     \textsc{\Large ST 314}\\[0.5cm]
     \textsc{\Large Winter 2019}\\[0.5cm]
     \HRule \\[0.4cm]
-    { \huge \bfseries Week 1}\\[0.4cm] % Title of your document
+    { \huge \bfseries Data Analysis One}\\[0.4cm] % Title of your document
     \HRule \\[1.5cm]
     \begin{minipage}{0.4\textwidth}
         \begin{flushleft} \large
@@ -51,8 +53,62 @@
     \end{minipage}\\[2cm]
 		\end{titlepage}
         
-		\section{}
+        \iffalse
+            Part 1. (8 points) For each random variable:
+            (1 point) State whether the random variable should be modeled with a Binomial or a Poisson distribution.
+            (1 point) Explain your reasoning.
+            (1 point) State the parameter values that describe the distribution.
+            (1 point) Give the specific probability mass function. 
+        \fi
+		\section{Part 1}
+		
+		\iffalse
+Part 2: (10 points) Wheel of Fortune is a popular game show on Television.
+Contestants spin a wheel and try to guess a correct letter from a word puzzle. If
+they guess correctly, they earn the dollar amount from the wheel. If they spin
+“bankrupt” or “lose a turn” they get nothing and can’t play. To the right is an
+example of the wheel. Watch this video to see an example of someone spinning
+the wheel. https://www.youtube.com/watch?v=\_Pv33JWBdY8
+The outcome of a spin on the wheel is a discrete random variable. Consider X
+the dollar amount spun on the wheel, where Bankrupt and Lose a Turn = \$0, and
+Free Play = \$500. There are 24 wedges on the wheel. 
+
+		 a. (2 points) Fill in the probability mass function p(x). The first few are provided as a guide.
+b. (2 points) Calculate the Cumulative Density Function F(x). The first few are provided as a guide.
+c. (3 points) What is the average dollar amount? Show work!
+d. (2 point) What is the most likely dollar amount?
+e. (1 point) What is the chance someone spins more than \$600?
+		\fi
+		\section{Part 2}
+		
+		\iffalse
+Part 3. (6 points) Suppose a contestant spins the wheel three times.
+a. (2 points) If spinning a “$0” is considered the event of interest, and each spin is independent of the other
+spins, what common discrete distribution best models X the number of “$0” outcomes among 3 spins?
+b. (2 points) How likely is it they spin $0 each time? Show work!
+c. (2 points) How likely is it they spin $0 at least one time? Show work!
+		\fi
+		
+		\section{part 3}
 			
+		
+		\iffalse
+		    Part 4: (6 points) The probabilities in Part 2 are based on probability theory aka “math”. Do these probabilities
+stand up when a contestant actually spins the wheel? Go back to the Data Analysis #1 instructions page.
+Download the R script titled: Wheel\_of\_Fortune\_Spin\_Script.R , open the file it will automatically open in R.
+You need R software on the computer to open the script window. Follow the instructions in the code then
+answer the following:
+a. (1 point) What value did you spin?
+b. (1 point) What is the average of the 1000 simulated spins? How different is this from the average you
+calculated in part 2?
+c. (1 point) Paste the probability mass function and the plot of the probability mass function from R.
+d. (1 point) How different are the simulated probabilities to the theoretical probabilities in part 2?
+e. (1 point) Based on the plot is the most likely outcome the same as it is in part 2?
+f. (1 point) In general, what action will make the simulated values more like the theoretical ones? 
+		\fi
+		\section{part 4}
+		
+		
 		\section{Bibliography}
 		\bibliography{References}
 		\end{document}
