@@ -54,10 +54,90 @@
 		\end{titlepage}
         
         \iffalse
+        For each random variable:
+        a. State the distribution that will best model random variable. Choose from the common distributions:
+        Uniform, Exponential or Normal distribution. Explain your reasoning.
+        b. State the parameter values that describe the distribution.
+        c. Give the probability density function. 
+
+        Random Variable 1.
+        The maintenance manager at a chemical facility know that times between repairs for a specific chemical
+        reactor is modeled by a distribution that is positively skewed, with no upper limit. The average time
+        between a repair is 100 days.
+        Random Variable 2.
+        An agricultural study found the percent of butterfat in the milk of 2-year old Canadian dairy cows is
+        symmetrically distributed. The percent of butterfat in the study had an average of 4.5\% and a standard
+        deviation of 0.4\%. The butterfat percentages were more likely to be near the mean than further away.
+        Random Variable 3.
+        During a routine check, an engineer discovers that a pump has failed for a production process between the time period of 2:00PM and 4:00PM. Consider the time of failure is a random variable, where the pump has an equal chance of failing at anytime during the period between 2:00PM and 4:00PM
         \fi
 		\section{Part 1}
 		    \subsection{}
 		        \paragraph
+        
+
+        \iffalse
+        Part 2. (9 points) Normal Distributions
+        The distribution represents the approximate distribution of
+        entry-level salaries for Mechanical Engineers in the US
+        according to Glassdoor.com. Use this distribution to answer
+        the following questions. Show work or R code for each.
+        a. (2 points) State the average and standard deviation values
+        for the salary distribution.
+        b. (2 points) Suppose an engineer claims their salary is
+        \$59000/year, how many standard deviations away from
+        the mean is their salary? (Hint: This is the z score)
+        c. (2.5 points) According to this distribution, what is the
+        probability a mechanical engineer’s salary is below
+        \$59000?
+        d. (2.5 points) What salary amount represents the 85th
+        percentile? 
+        \fi
+        \section{Part 2}
+            \subsection{}
+                \paragraph
+
+
+        \iffalse
+Part 3. (12 points) Simulation of Gamma Random Variables
+Background: When we use the probability density function to find probabilities for a random variable, we are
+using the density function as a model. This is a smooth curve, based on the shape of observed outcomes for the
+random variable. The observed distribution will be rough and may not follow the model exactly. The probability
+density curve, or function, is still just a model for what is actually happening with the random variable. In other
+words, there can be some discrepancies between the actual proportion of values above x and the proportion of
+area under the curve above the same value x. Our expectation is as the number of observations increase, literally
+or theoretically, the observed distribution will align more with the density curve. Over the long run, the differences
+are negligible, the model is sufficient and more convenient to find desired information. 
+Intellectual Property of Katie Jager ©
+3
+Simulation: Use R to simulate 1000 observations from a gamma distribution. To begin alpha = 2 and beta = 7.
+Highlight and run the parameters and observation values. Run the simulation code to plot the observations and fit
+the probability density function over the observations. You don’t need to change anything. You may run the
+section all at once by highlighting all of the section and running it by clicking the run button at the top of the
+script window.
+a. Given the values are from a gamma distribution with alpha = 2 and beta = 7,
+i. (1 point) What is the expression for the probability density function?
+ii. (2 points) What is the average and standard deviation of random variable? Show work.
+iii. (2 points) What is the probability x is less than 4? Show work.
+b. (1 point) Run the simulation and paste your plot. Comment on the general shape of the distribution. How well
+does the density curve fit the observations?
+c. (1 point)What is the exact proportion of values below 4? How does the actual proportion compare to the
+probability from the density curve in part 2-a-iii?
+d. (1 point) Increase the number of observation to 10000, rerun the simulation. Paste your plot. How does
+increasing the number of observations affect the fit of the density curve?
+e. (1 point) What is the exact proportion of values below 4? How does increasing the number of observations
+affect the accuracy of the model? Make a comparison between this proportion and 2-a-iii and 2c.
+f. (1 point) Rerun the simulation with alpha = 1, beta = 7, and observations = 10000. Paste your plot. Comment
+on the general shape of the distribution.
+g. (2 points) This model is a special case of the gamma distribution, what is it specifically? What is the expression
+for the probability density function?
+h. Optional: Change the parameter values and take note of the effect of increasing or decreasing parameter
+values. 
+        \fi
+
+        \section{Part 3}
+            \subsection{}
+                \paragraph
 		
 		
 		\section{Bibliography}
