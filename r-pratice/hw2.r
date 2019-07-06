@@ -50,9 +50,12 @@ print(1-d(217.86492))
 ### Code for problem 8
 ### Example R code
 n=seq(0, 10, 0.1)
-mu = 0; sigma = 1; x = 0.25; # Note you will have to change the value of x.
-print(1 - pnorm(x,mu,sigma))
+mu = 0; sigma = 1; x1 = 2.2; x2 = -1 # Note you will have to change the value of x.
+print(pnorm(x1,mu,sigma)-pnorm(x2,mu,sigma))
 
+
+mu = 0; sigma = 1; p = 0.02; # Note you will have to change the value of p.
+qnorm(p,mu,sigma)
 
 
 ### End Code
