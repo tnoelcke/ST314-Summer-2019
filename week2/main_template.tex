@@ -35,7 +35,7 @@
     \center
     \textsc{\Large Oregon State University}\\[1.5cm]
     \textsc{\Large ST 314}\\[0.5cm]
-    \textsc{\Large Winter 2019}\\[0.5cm]
+    \textsc{\Large Summer 2019}\\[0.5cm]
     \HRule \\[0.4cm]
     { \huge \bfseries Data Analysis One}\\[0.4cm] % Title of your document
     \HRule \\[1.5cm]
@@ -72,10 +72,37 @@
         During a routine check, an engineer discovers that a pump has failed for a production process between the time period of 2:00PM and 4:00PM. Consider the time of failure is a random variable, where the pump has an equal chance of failing at anytime during the period between 2:00PM and 4:00PM
         \fi
 		\section{Part 1}
-		    \subsection{}
-		        \paragraph
-        
-
+		    \subsection{Random Variable 1}
+		        This variable would be best modeled by the exponential distribution. This is because it has no upper limit and is positively skewed. Additionally, we know the average but not the standard distribution. To best model this distribution we only need one parameter, the average. Given the average we can calculate the value for lambda. Show below is the probability density function.
+		        \[
+		        f_x =
+		        \begin{cases}
+		            \frac{1}{100}e^{-\frac{1}{100}x} &\  x \geq 0\\
+		            0 &\ x < 0\\
+		        \end{cases}
+		        \]\\
+                    		        
+		        
+            \subsection{Random Variable 2}
+                This random variable would be best modeled by the normal distribution. The probability is symmetrical where it is more likely that the values are closer to the mean. The distribution of the dairy cows also has a calculated standard deviation which makes it easy to model with the normal distribution. For this distribution we need the average value for the distribution in question and the standard distribution. In this case the average is 4.5\% and the standard deviation is 0.4\%. Shown below is the probability density function.\\
+                
+                \[
+                    f_x = \frac{1}{\sqrt{2\pi0.4^{2}}}\Big{e}^-\frac{(x - 4.5)^{2}}{0.8^{2}}
+                \]
+                
+            \subsection{Random Variable 3}
+                This random variable would be best modeled by the Uniform distribution. This is because between 2pm and 4pm the pump was in a failure state. This distribution also works well because there are clear upper and lower bounds to the distribution and a single value during that period of time. In this cause we only need the upper and lower bounds for the distribution and the value for the distribution. In this case the upper and lower bounds are 2 to 4. We will let the chance of failure at any given one point during the the two hours be represented by the value 1/120. Below is the the probability density function.\\
+                
+                \[
+                    f_x =
+                    \begin{cases}
+                        \frac{1}{120} &\  2 \geq x \leq 4\\
+                        0 &\ x > 2, x < 4 
+                    \end{cases}
+                \]
+                
+                
+                
         \iffalse
         Part 2. (9 points) Normal Distributions
         The distribution represents the approximate distribution of
@@ -95,7 +122,19 @@
         \fi
         \section{Part 2}
             \subsection{}
-                \paragraph
+                The average appears to be 75,000\$ according to the distribution shown in the picture. based on the 65, 95 99 rule I would estimate that the standard deviation appears to be x. I've placed some R code and a recreation of the plot which I've used for the rest of the calculations below.\\
+                
+                \begin{lstlisting}[language=R]
+                    salary = function(x) {dnorm(x, mean = 75, sd=10)+75}
+                    r = seq(40, 110, 0.1)
+                    lab = seq(45, 105, 10)
+                    plot(r, salary(r), xlab="", main="Salary", lwd = 2, xaxt="n")
+                    axis(1, at = lab, las=2)
+                \end{lstlisting}
+                
+                \includegraphics{plot}
+                
+                
 
 
         \iffalse
@@ -137,7 +176,6 @@ values.
 
         \section{Part 3}
             \subsection{}
-                \paragraph
 		
 		
 		\section{Bibliography}
