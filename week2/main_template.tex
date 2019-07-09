@@ -11,6 +11,7 @@
 \usepackage{url}
 \usepackage{listings}
 \usepackage{ifthen}
+\usepackage{relsize}
 
 
 \usepackage[TABBOTCAP, tight]{}
@@ -132,11 +133,48 @@
                     axis(1, at = lab, las=2)
                 \end{lstlisting}
                 
-                \includegraphics{plot}
+                \includegraphics{week2/plot.png}
                 
+            \subsection{}
+                For this problem we can simply calculate a Z Score and determine how far away that 59,000\$ is away from the mean.\\
                 
-
-
+                \[
+                    Z = \frac{x - \mu}{\sigma}\\
+                \]
+                \[
+                    Z = \frac{59000 - 75000}{10000} = -1.6\\
+                \]
+                
+                The salary of 59,000\$ per year is 1.6 standard deviations less than the mean.\\
+                
+            \subsection{}
+                To find the probability that an engineers salary is less than 59000 I used R. I've included the R code that I used to find the answer below as well as the output to the console.
+                
+                \begin{lstlisting}[language=R]
+                    salaryProp = function(x) {pnorm(x, mean = 75, sd = 10)}
+                    salaryProp(59)
+                \end{lstlisting}
+                
+                \begin{lstlisting}[language=sh]
+                    > salaryProp = function(x) {pnorm(x, mean = 75, sd = 10)}
+                    > salaryProp(59)
+                    [1] 0.05479929
+                \end{lstlisting}
+                
+            \subsection{}
+                To find the 85th percentile of mechanical engineers salary I decided to user R. I've include the R code that i used to find the answer below as well as the output from the console.
+                
+                \begin{lstlisting}[language=R]
+                    salary = function(x) {qnorm(x, mean = 75, sd=10)}
+                    salary(0.85)
+                \end{lstlisting}
+                
+                \begin{lstlisting}[language=sh]
+                    > salary = function(x) {qnorm(x, mean = 75, sd=10)}
+                    > salary(0.85)
+                    [1] 85.36433
+                \end{lstlisting}
+                This means that the salary that is at the 85th precentile is 85,363.33\$.\\
         \iffalse
 Part 3. (12 points) Simulation of Gamma Random Variables
 Background: When we use the probability density function to find probabilities for a random variable, we are
@@ -176,8 +214,80 @@ values.
 
         \section{Part 3}
             \subsection{}
-		
-		
-		\section{Bibliography}
-		\bibliography{References}
+                \paragraph{i}
+                    The expression of the probability density function is shown below:
+                    
+                    \[
+                        \mathlarger{
+                        f_x =
+                        \begin{cases}
+                            \frac{1}{7^{\alpha}\gamma(2)}xe^{\frac{-x}{7}} &\ x \geq 0\\
+                            0 &\ otherwise\\
+                        \end{cases}
+                        }
+                    \]
+                \
+            
+		        \paragraph{ii}
+		            The average and standard deviation are shown below.
+		            Average Expected Value:
+		            \[E(x) = u_x = \alpha\Beta\]
+		            \[E(x) = 14\]
+		            
+		            Standard Deviation:
+		            
+		            \[V(x) = \sigma_x^{2} = \alpha\Beta^{2}\]
+		            \[sd = sqrt{2*7^2)}\]
+		            \[sd = 9.8994\]
+		            
+		        \paragraph{iii}
+		            I chose to use R for this problem below is the r code I used as well as the results from the terminal.
+		        \begin{lstlisting}[language=R]
+                    gamma = function(x) {pgamma(x,2, (1/7))}
+                    gamma(4)
+                \end{lstlisting}
+                
+                \begin{lstlisting}[language=sh]
+                    > gamma = function(x) {pgamma(x,2, (1/7))}
+                    > gamma(4)
+                    [1] 0.1125858
+                \end{lstlisting}
+                
+                The probability that x is less than 4 is 0.1126.\\
+            \subsection{}
+                I've run the simulation and found that the simulation generally follows the shape of the curve. However, it has area's where it is way out side the curve and areas where it is way under the curve. Below is a picture of the plot my simulation generated.
+                
+                \includegraphics{week2/GammaSimOne.png}
+                
+            \subsection{}
+                The exact proportion below 4 for the simulation was 0.11. This matches fairly closely with the expected value found in part 2.iii.\\
+                
+            \subsection{}
+                The increasing number of trials has had the effect of a much tighter fit to the curve. There are still some values that are inside or outside the curve. However, Those values are much less extreme than the trial where we only ran one thousand trials.\\
+                
+                \includegraphics{week2/GammaSimTwo.png}
+            \subsection{}
+		        In the second trial I had 11.56 percent of the values below 4. This seems a bit high in comparison to our expected value of 11.26. Looking at the plot it seems I may have a few outliers that are throwing this off. This is about the same amount of error in the first trial with 1000 points. However, This one was off on the high side rather than the low side.\\
+		        
+		    \subsection{}
+		        When running the gamma simulation with Alpha set to one I find that the shape of the data looks like it is exponential. The probability density starts off high and gets lower and lower over time.\\
+		    
+		        \includegraphics{week2/GammaSimThree.png}
+		        
+            \subsection{}
+                The above simulation is the Exponential Distribution. As noted before the shape looks like it fits the exponential model. This is because the exponential distribution is the same as the Gamma distribution when alpha is one.\\
+                
+                Below is the expression that represents the probability density function.
+                
+                \[
+		        f_x =
+		        \begin{cases}
+		            \frac{1}{7}e^{-\frac{1}{7}x} &\  x \geq 0\\
+		            0 &\ x < 0\\
+		        \end{cases}
+		        \]\\
+                
+                
+		        
+	
 		\end{document}
