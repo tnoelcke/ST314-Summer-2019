@@ -27,10 +27,10 @@ n
 # Example: st314data$SubjectPreffered 
 # Choose a different categorical variable for your analysis!
 
-table(st314data$SubjectPreferred)
-barplot(table(st314data$SubjectPreferred), 
-        main = "Subject Preferred by ST314 Summer Students",
-        col = c("blue","green"))
+table(st314data$Gaming)
+barplot(table(st314data$Gaming), 
+        main = "preferedGaming Device",
+        col = c("blue","red"))
 
 
 # Choose a quantitative variable to visualize. 
@@ -44,7 +44,7 @@ barplot(table(st314data$SubjectPreferred),
 # Use the hist() command and define the variable from the dataset. 
 # dataset$variable, $ tells R "use this variable from this dataset". 
 
-hist(st314data$Email)
+hist(st314data$GamingHours)
 
 # The basic histogram is ugly. Should add a title and some color. 
 # Add a title with main = " Title" 
@@ -52,9 +52,9 @@ hist(st314data$Email)
 # Add color with col = "blue" (or "red" or "orange" etc...)
 # More graphical options can be explored at help(hist)
 
-hist(st314data$Email, 
-     main = "ST314 Summer 2019 Students: Email Count", 
-     xlab = "Number of emails over 24 hour period", 
+hist(st314data$GamingHours, 
+     main = "ST314 Summer 2019 Students: Gaming Hours per week", 
+     xlab = "Gaming Hours in a Typical week", 
      col = "dodgerblue")
 
 
@@ -66,26 +66,26 @@ hist(st314data$Email,
 # Graphical options are the essentially the same as histogram. 
 # More graphical options can be explored at help(boxplot)
 
-boxplot(st314data$Email, 
-     main = "ST314 Summer 2019 Students: Email Count", 
-     xlab = "Number of emails over 24 hour period", 
+boxplot(st314data$GamingHours, 
+     main = "ST314 Summer 2019 Students: Gaming Hours per week", 
+     xlab = "Gaming Hours in a Typical week", 
      col = "dodgerblue")
 
 # This plot is vertical. 
 #Make is horizontal by adding , horizontal = TRUE) 
 
-boxplot(st314data$Email, 
-        main = "ST314 Summer 2019 Students: Email Count", 
-        xlab = "Number of emails over 24 hour period", 
+boxplot(st314data$GamingHours, 
+        main = "ST314 Summer 2019 Students: Gaming Hours per week", 
+        xlab = "Gaming Hours in a Typical Week", 
         col = "dodgerblue", horizontal = TRUE)
 
 # Calculate the summary statistics for your chosen variable. 
 
 # Calculate the "Five Number Summary" and the mean with summary()
-summary(st314data$Email)
+summary(st314data$GamingHours)
 
 # Calculate the Sample Standard Deviation sd()
-sd(st314data$Email)
+sd(st314data$GamingHours)
 
 
 ###########################################################
@@ -101,3 +101,13 @@ YourRandomSample = st314data[sample(1:length(st314data),10),]
 # Don't use Email... use the same variable you chose in part I. 
 # Use the mean() and sd() commands and hist() or boxplot()
 # Now you need to write your own code! ;)
+
+mySampleData = YourRandomSample$GamingHours
+summary(mySampleData)
+sd(mySampleData)
+
+hist(mySampleData, main = "ST314 Sample: Gaming Hours Per Week", xlab = "Gaming Hours in a Typical Week", col = "dodgerblue" )
+boxplot(mySampleData, main = "ST314 Sample: Gaming Hours Per Week", xlab = "Gaming Hours in a Typical Week", col = "dodgerblue", horizontal = TRUE)
+
+
+
