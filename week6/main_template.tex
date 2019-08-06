@@ -56,6 +56,7 @@
         \section{Part 1}
             \subsection{}
              %include graphics here side by side box plot
+             \includegraphics[]{week6/images/Rplot.png}
              
              \subsection{}
              Based on the side by side box plots it does appear that there are differences in the average. It appears that CS has a higher average in comparison to the other majors. The other majors seem to have similar averages. However, Mechanical and Civil both have outliers.\\
@@ -63,21 +64,22 @@
 		    \subsection{}
 		    The null hypothesis and alternative hypothesis are shown below:
             \[
-                H_0 = \mu_civil&CEM = \mu_cs = \mu_IE = \mu_mech
+                H_0 = \mu_{civilandCEM} = \mu_{cs} = \mu_{IE} = \mu_{mech}
             \]
             \[
-                H_a = Two or more differ
+                H_a =
             \]
+            Two or more are different
             
             \subsection{}
             The conditions for this set of sample data is not ideal. This sample is not completely random as this sample is selected from students that are in ST314. Additionally, all of the students in this class are taking the online version of the class. It is also fair to note that the standard deviations for the different samples vary widely with IE or other at 1.043 on the low end and Civil or CEM on the high end with 11.926.\\
             
             \subsection{}
-            \begin{lslisting}[sh]
+            \begin{lstlisting}
             Df Sum Sq Mean Sq F value Pr(>F)
 Major         3    108   36.07   0.742  0.529
 Residuals   136   6613   48.63   
-            \end{lslisting}
+            \end{lstlisting}
             
             From the table above we can say that the MSTr is 36.07 and the MSE is 48.63.\\ 
             
@@ -89,7 +91,7 @@ Residuals   136   6613   48.63
                 There is not significant evidence to reject the null hypothesis that the different majors have different population means in terms of number of room mates.\\
             \subsection{}
                 \subsubsection{}
-                    \begin{lslisting}[sh]
+                    \begin{lstlisting}
                             diff       lwr      upr     p adj
 CS-Civil or CEM          -2.328571 -6.418790 1.761647 0.5537141
 IE or Other-Civil or CEM -2.476190 -7.349825 2.397444 0.6433715
@@ -97,14 +99,14 @@ MechEng-Civil or CEM     -1.202179 -4.904243 2.499885 0.8759930
 IE or Other-CS           -0.147619 -4.826661 4.531423 0.9998599
 MechEng-CS                1.126392 -2.315468 4.568252 0.8734787
 MechEng-IE or Other       1.274011 -3.069814 5.617837 0.9050928
-                    \end{lslisting}
+                    \end{lstlisting}
                 
                 \subsubsection{}
                 In this case all of the comparisons are significant in that they all pass the P-Value test.\\
                 
                 \subsubsection{}
                     The difference with the smallest P value is the comparison between CS and Civil and CEM. This statistic shows that the difference between CS and Civil/CEM in terms of number of room mates will be between -6.41 and 1.761 room mates.\\
-        \section{}
+        \section{Part 2}
             \subsection{}
             From the bar chart we can say that 90.9 percent of students have a social networking profile.\\
             \subsection{}
@@ -145,6 +147,6 @@ MechEng-IE or Other       1.274011 -3.069814 5.617837 0.9050928
             \]
             
             \subsection{}
-            There is a 95 percent chance that the true proportion of students in the COE that have a social media profile is between 0.860 and 0.958 with a point estiamte of 0.909.\\
+            There is a 95 percent chance that the true proportion of students in the COE that have a social media profile is between 0.860 and 0.958 with a point estimate of 0.909.\\
             
 		\end{document}
