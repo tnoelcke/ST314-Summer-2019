@@ -4,7 +4,7 @@
 # Upload the dataset for this week. 
 # Call it examdata
 
-examdata = read.csv(file.choose(), header = TRUE)
+examdata = read.csv("C:/Users/Gus/Documents/ST314-Summer-2019/Week7/ExamDataSu19.csv", header = TRUE)
 
 
 ####### SUPER IMPORTANT STEP!!!!!!!   ###########################
@@ -30,20 +30,20 @@ attach(examdata)
 #         strength and form and any outliers.  Recall, x is the explanatory variable and y is 
 #         the observed response. 
 # R Scatterplot: 
-  plot(x,y, main = "put your title here")
+  plot(examdata$Midterm, examdata$Final, main = "relationship between midterm score and final score")
 
 #     2.	Numerically: Calculate the correlation coefficient r to summarize the linear relationship. 
 #      a. Note: If the relationship is obviously not linear then the correlation coefficient will 
 #         not be an accurate measurement. Other methods should be investigated.  
 # R Correlation: 
-  cor(x,y)
+  cor(examdata$Midterm, examdata$Final)
 
 # Step 2: Calculate the least-squares regression line and check conditions for inference. 
 #     1.	Calculate the least-square regression line but only to be able to check conditions using 
 #         a residual plot of the model. 
 # R Calculate the least -squares regression line:
   
-  mod = lm(y~x)
+  mod = lm(examdata$Final~examdata$Midterm)
   summary(mod) #note here the line has been named mod
 
 #     2.	Check conditions
@@ -62,7 +62,7 @@ attach(examdata)
 #         1.	Is it violated? The number of residuals above or below the reference line of zero are different. 
 # R create a residual plot:
 
-  plot(x,mod$residuals)
+  plot(examdata$Midterm,mod$residuals)
   abline(h= 0, lty = 2) 
 
 # mod$resdiuals pulls the residuals from the linear model names "mod"
@@ -80,7 +80,7 @@ attach(examdata)
 #        i.	State the strength evidence that the explanatory variable is a significant predictor of the response. 
 #       ii.	If a significance level was used, state whether or not the null is rejected. 
 # R Calculate the least -squares regression line and obtain p-value from t test statistic:
-  mod = lm(y~x)
+  mod = lm(examdata$Final~examdata$Midterm)
   summary(mod)#note here the line has been named mod
 
 #      c.	Construct a t confidence interval for the slope Beta_1 with n-2 degrees of freedom. 
@@ -94,6 +94,8 @@ attach(examdata)
 #######################
 # Optional for Part 4 #
 #######################
+  
+  xnew = 172
   
 # R calculate the predicted y value for a value of x:
   predict(mod, data.frame(x = xnew)) #note xnew is the new value to be predicted. 
@@ -132,7 +134,7 @@ attach(examdata)
             legend("topleft",c("LSRL", "CI", "PI"),lty = c(1,2,4), col=c("black", "blue", "purple"))
           }
 # Define the model name, x, y, and alpha level in function below 
-PICIplot(mod, x, y, alpha)
+PICIplot(mod, examdata$Midterm, examdata$Final, 0.05)
       
           
           
